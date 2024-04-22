@@ -1,0 +1,198 @@
+:root {
+  --primary-color: #333;
+  --secondary-color: #111;
+  --pccomponentes-color: #ff6000;
+  --link-color: white;
+  --link-hover-color: #8b8b8b;
+  --button-color: transparent;
+  --button-hover-color: #111;
+  --spacing: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+nav {
+  width: 100%;
+  background-color: var(--primary-color);
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing);
+}
+
+.logo {
+  margin-right: var(--spacing);
+}
+
+.logo img {
+  min-width: 130px;
+}
+
+.menu-search-list,
+.action-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.menu-search-list li {
+  margin-right: var(--spacing);
+}
+
+.action-list li {
+  margin-left: var(--spacing);
+}
+
+.menu-search-list .dropdown h3 {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #f2f2f2;
+  color: #333;
+  cursor: pointer;
+  text-align: center;
+}
+
+.menu-search-list h3.dropbtn:hover {
+  background-color: var(--link-hover-color);
+  border-color: #8b8b8b;
+}
+
+.menu-search-list .dropdown {
+  margin-right: -1px;
+}
+
+.menu-search-list input[type='text'] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #f2f2f2;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--primary-color);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  color: var(--link-color);
+}
+
+.dropdown-content a:hover {
+  background-color: var(--link-hover-color);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* .action-list input[type='text'] {
+  padding: var(--spacing);
+  border: none;
+  font-size: 17px;
+} */
+
+.action-list button {
+  background-color: var(--button-color);
+  color: var(--link-color);
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing);
+}
+
+.action-list button:hover {
+  background-color: var(--button-hover-color);
+}
+
+@media (min-width: 376px) {
+  /* .menu-search-list h3.dropbtn::before {
+    content: '';
+  } */
+
+  .menu-search-list input[type='text'] {
+    display: block;
+  }
+
+  .menu-search-list .search-icon {
+    display: none;
+  }
+
+  .pc {
+    display: block;
+  }
+
+  .mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 375px) {
+  .logo,
+  .action-list li {
+    display: none;
+  }
+
+  .menu-search-list h3.dropbtn {
+    margin: var(--spacing);
+    background-color: var(--pccomponentes-color);
+    border: none;
+    font-size: 20px;
+  }
+
+  .menu-search-list .dropdown {
+    margin-right: 10px;
+  }
+
+  .menu-search-list input[type='text'] {
+    display: none;
+  }
+
+  .menu-search-list .search-icon {
+    display: block;
+    width: 60px;
+    height: 50px;
+    margin-left: auto;
+    background: url('https://static.vecteezy.com/system/resources/previews/009/589/567/non_2x/magnifying-icon-magnifying-clipart-transparent-free-png.png')
+      no-repeat;
+    background-size: contain;
+    cursor: pointer;
+  }
+
+  .pc {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+}
