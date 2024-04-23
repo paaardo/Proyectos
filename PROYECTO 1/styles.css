@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #111010;
+  --primary-color: #2e2e2e;
   --secondary-color: #111;
   --pccomponentes-color: #ff6000;
   --link-color: white;
@@ -28,7 +28,7 @@ nav {
   background-color: var(--primary-color);
 }
 
-.navbar-content {
+.navbar-contenido {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -43,8 +43,8 @@ nav {
   min-width: 130px;
 }
 
-.menu-search-list,
-.action-list {
+.lista-busqueda,
+.lista-botones {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -52,36 +52,36 @@ nav {
   align-items: center;
 }
 
-.menu-search-list li {
+.lista-busqueda li {
   margin-right: var(--spacing);
 }
 
-.action-list li {
+.lista-botones li {
   margin-left: var(--spacing);
 }
 
-.menu-search-list .dropdown h3 {
+.lista-busqueda .drop h1 {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
   background-color: #f2f2f2;
-  color: #333;
+  color: var(--primary-color);
   cursor: pointer;
   text-align: center;
 }
 
-.menu-search-list h3.dropbtn:hover {
+.lista-busqueda h1.dropboton:hover {
   background-color: var(--link-hover-color);
-  border-color: #8b8b8b;
+  border-color: var(--link-hover-color);
 }
 
-.menu-search-list .dropdown {
+.lista-busqueda .drop {
   margin-right: -1px;
 }
 
-.menu-search-list input[type='text'] {
+.lista-busqueda input[type='text'] {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -90,11 +90,11 @@ nav {
   background-color: #f2f2f2;
 }
 
-.dropdown {
+.drop {
   position: relative;
 }
 
-.dropdown-content {
+.drop-contenido {
   display: none;
   position: absolute;
   background-color: var(--primary-color);
@@ -102,7 +102,7 @@ nav {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
-.dropdown-content a {
+.drop-contenido a {
   display: block;
   text-align: center;
   text-decoration: none;
@@ -112,21 +112,15 @@ nav {
   color: var(--link-color);
 }
 
-.dropdown-content a:hover {
+.drop-contenido a:hover {
   background-color: var(--link-hover-color);
 }
 
-.dropdown:hover .dropdown-content {
+.drop:hover .drop-contenido {
   display: block;
 }
 
-/* .action-list input[type='text'] {
-  padding: var(--spacing);
-  border: none;
-  font-size: 17px;
-} */
-
-.action-list button {
+.lista-botones button {
   background-color: var(--button-color);
   color: var(--link-color);
   border: none;
@@ -134,71 +128,8 @@ nav {
   padding: var(--spacing);
 }
 
-.action-list button:hover {
+.lista-botones button:hover {
   background-color: var(--button-hover-color);
-}
-
-@media (min-width: 376px) {
-  /* .menu-search-list h3.dropbtn::before {
-    content: '';
-  } */
-
-  .menu-search-list input[type='text'] {
-    display: block;
-  }
-
-  .menu-search-list .search-icon {
-    display: none;
-  }
-
-  .pc {
-    display: block;
-  }
-
-  .mobile {
-    display: none;
-  }
-}
-
-@media (max-width: 375px) {
-  .logo,
-  .action-list li {
-    display: none;
-  }
-
-  .menu-search-list h3.dropbtn {
-    margin: var(--spacing);
-    background-color: var(--pccomponentes-color);
-    border: none;
-    font-size: 20px;
-  }
-
-  .menu-search-list .dropdown {
-    margin-right: 10px;
-  }
-
-  .menu-search-list input[type='text'] {
-    display: none;
-  }
-
-  .menu-search-list .search-icon {
-    display: block;
-    width: 60px;
-    height: 50px;
-    margin-left: auto;
-    background: url('https://static.vecteezy.com/system/resources/previews/009/589/567/non_2x/magnifying-icon-magnifying-clipart-transparent-free-png.png')
-      no-repeat;
-    background-size: contain;
-    cursor: pointer;
-  }
-
-  .pc {
-    display: none;
-  }
-
-  .mobile {
-    display: block;
-  }
 }
 
 /* CSS DEL MAIN */
@@ -283,25 +214,31 @@ article img {
   grid-area: outdoor;
 }
 
+.otros-articulos-contenedor {
+  overflow-x: auto;
+  padding: var(--spacing-articulos) 0;
+}
+
 .otros-articulos {
   display: flex;
   justify-content: space-between;
-  margin: var(--spacing-articulos);
+  margin: 0 var(--spacing-grid);
 }
 
 .otros-articulos article {
   flex: 0 0 calc(16.66% - 20px);
+  margin-right: var(--spacing-grid);
 }
 
 .otros-articulos img {
   max-width: 100%;
   height: auto;
-  width: 66%;
 }
 
 .otros-articulos h2 {
   font-size: 20px;
   margin: 10px 0;
+  min-width: 150px;
 }
 
 .otros-articulos .precio {
@@ -309,6 +246,7 @@ article img {
   color: var(--pccomponentes-color);
 }
 
+/* CSS DEL FOOTER */
 footer {
   background-color: var(--footer-color);
   padding: 20px;
@@ -325,10 +263,6 @@ footer {
   margin-right: 0;
 }
 
-.footer-columna h3 {
-  font-weight: bold;
-}
-
 .footer-columna ul {
   list-style-type: none;
   padding: 0;
@@ -341,4 +275,101 @@ footer {
 
 .footer-columna ul li:hover {
   color: var(--pccomponentes-color);
+}
+
+/* MEDIA SCREEN */
+@media (min-width: 376px) {
+  .lista-busqueda input[type='text'] {
+    display: block;
+  }
+
+  .lista-busqueda .icono-buscar {
+    display: none;
+  }
+
+  .pc {
+    display: block;
+  }
+
+  .mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 375px) {
+  .logo {
+    display: none;
+  }
+
+  .lista-busqueda h1.dropboton {
+    margin: var(--spacing);
+    background-color: var(--pccomponentes-color);
+    border: none;
+    font-size: 20px;
+  }
+
+  .lista-busqueda .drop {
+    margin-right: 10px;
+  }
+
+  .lista-busqueda input[type='text'] {
+    display: none;
+  }
+
+  .lista-busqueda .icono-buscar {
+    display: block;
+    width: 60px;
+    height: 50px;
+    margin-left: auto;
+    background: url('https://static.vecteezy.com/system/resources/previews/009/589/567/non_2x/magnifying-icon-magnifying-clipart-transparent-free-png.png')
+      no-repeat;
+    background-size: contain;
+    cursor: pointer;
+  }
+
+  .pc {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+  .grid-contenedor {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto 1fr repeat(5, auto);
+    grid-template-areas:
+      'oferta oferta'
+      'gaming portatiles'
+      'ordenadores componentes'
+      'monitores perifericos'
+      'smartphones tvaudio'
+      'consolas smartwatches'
+      'hogar outdoor';
+  }
+
+  .otros-articulos {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .otros-articulos article {
+    margin-right: var(--spacing);
+  }
+
+  .footer-columna {
+    flex: 1;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+@media (max-width: 510px) {
+  .lista-botones li {
+    display: none;
+  }
 }
