@@ -28,6 +28,13 @@ nav {
   background-color: var(--primary-color);
 }
 
+h1 {
+  font-size: 20px;
+  color: var(--pccomponentes-color);
+  text-align: center;
+  margin: var(--spacing);
+}
+
 .navbar-contenido {
   display: flex;
   justify-content: space-between;
@@ -60,7 +67,7 @@ nav {
   margin-left: var(--spacing);
 }
 
-.lista-busqueda .drop h1 {
+.lista-busqueda .drop h2 {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -72,7 +79,7 @@ nav {
   text-align: center;
 }
 
-.lista-busqueda h1.dropboton:hover {
+.lista-busqueda h2.dropboton:hover {
   background-color: var(--link-hover-color);
   border-color: var(--link-hover-color);
 }
@@ -235,7 +242,7 @@ article img {
   height: auto;
 }
 
-.otros-articulos h2 {
+.otros-articulos h3 {
   font-size: 20px;
   margin: 10px 0;
   min-width: 150px;
@@ -301,7 +308,7 @@ footer {
     display: none;
   }
 
-  .lista-busqueda h1.dropboton {
+  .lista-busqueda h2.dropboton {
     margin: var(--spacing);
     background-color: var(--pccomponentes-color);
     border: none;
