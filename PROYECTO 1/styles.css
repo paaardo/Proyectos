@@ -1,12 +1,15 @@
 :root {
-  --primary-color: #333;
+  --primary-color: #111010;
   --secondary-color: #111;
   --pccomponentes-color: #ff6000;
   --link-color: white;
   --link-hover-color: #8b8b8b;
   --button-color: transparent;
   --button-hover-color: #111;
+  --footer-color: #c4c3c3;
   --spacing: 10px;
+  --spacing-grid: 25px;
+  --spacing-articulos: 55px;
 }
 
 * {
@@ -19,6 +22,7 @@ body {
   font-family: Arial, sans-serif;
 }
 
+/* CSS DEL HEADER */
 nav {
   width: 100%;
   background-color: var(--primary-color);
@@ -195,4 +199,146 @@ nav {
   .mobile {
     display: block;
   }
+}
+
+/* CSS DEL MAIN */
+main {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+}
+.grid-contenedor {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: repeat(3, 1fr);
+  grid-gap: var(--spacing-grid);
+  grid-template-areas:
+    ' oferta oferta oferta oferta oferta oferta'
+    'gaming portatiles ordenadores componentes monitores perifericos'
+    'smartphones tvaudio consolas smartwatches hogar outdoor';
+  width: 100%;
+  height: 100%;
+  padding: var(--spacing-grid);
+  background-color: var(--pccomponentes-color);
+}
+
+article img {
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  border-radius: 1rem;
+  width: 100%;
+}
+
+.oferta {
+  grid-area: oferta;
+  background-size: cover;
+}
+
+.gaming {
+  grid-area: gaming;
+}
+
+.portatiles {
+  grid-area: portatiles;
+}
+
+.ordenadores {
+  grid-area: ordenadores;
+}
+
+.componentes {
+  grid-area: componentes;
+}
+
+.monitores {
+  grid-area: monitores;
+}
+
+.perifericos {
+  grid-area: perifericos;
+}
+
+.smartphones {
+  grid-area: smartphones;
+}
+
+.tvaudio {
+  grid-area: tvaudio;
+}
+
+.consolas {
+  grid-area: consolas;
+}
+
+.smartwatches {
+  grid-area: smartwatches;
+}
+
+.hogar {
+  grid-area: hogar;
+}
+
+.outdoor {
+  grid-area: outdoor;
+}
+
+.otros-articulos {
+  display: flex;
+  justify-content: space-between;
+  margin: var(--spacing-articulos);
+}
+
+.otros-articulos article {
+  flex: 0 0 calc(16.66% - 20px);
+}
+
+.otros-articulos img {
+  max-width: 100%;
+  height: auto;
+  width: 66%;
+}
+
+.otros-articulos h2 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.otros-articulos .precio {
+  font-weight: bold;
+  color: var(--pccomponentes-color);
+}
+
+footer {
+  background-color: var(--footer-color);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-columna {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.footer-columna:last-child {
+  margin-right: 0;
+}
+
+.footer-columna h3 {
+  font-weight: bold;
+}
+
+.footer-columna ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-columna ul li {
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.footer-columna ul li:hover {
+  color: var(--pccomponentes-color);
 }
