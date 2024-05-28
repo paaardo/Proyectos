@@ -1,0 +1,131 @@
+:root {
+  --pinterest-color: #e44d4d;
+  --pinterest-second-color: #ebe8e8;
+  --link-color: white;
+  --button-color: #e1e1e1;
+  --spacing-photos: 10px;
+  --spacing-suggested: 4px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* CSS HEADER */
+header {
+  background-color: var(--pinterest-second-color);
+  border-bottom: 1px solid var(--pinterest-color);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-left: 20px;
+}
+
+li {
+  margin-right: 20px;
+}
+
+.boton-navbar {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.logo img {
+  width: 7vw;
+  height: auto;
+  min-width: 18px;
+  max-width: 28px;
+}
+
+.busqueda-navbar {
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+
+#busqueda {
+  display: flex;
+  flex: 1;
+}
+
+#texto-busqueda {
+  padding: 10px;
+  border: 1px solid #b4b0b0;
+  border-radius: 17px;
+  font-size: 16px;
+  flex: 1;
+  margin-right: 10px;
+}
+
+#texto-busqueda:focus {
+  border-color: var(--pinterest-color);
+  outline: none;
+}
+
+#buscar {
+  padding: 10px 20px;
+  background-color: var(--pinterest-color);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#buscar:hover {
+  background-color: #a81d1d;
+}
+
+/*CSS MAIN*/
+main {
+  text-align: center;
+}
+
+h1 {
+  font-size: 17px;
+}
+
+#resultado img {
+  width: 200px;
+  margin: var(--spacing-photos);
+}
+
+#sugerencia button {
+  background-color: var(--button-color);
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 18px;
+  padding: 8px 16px;
+  margin: var(--spacing-suggested);
+  transition: background-color 0.5s ease;
+}
+
+#sugerencia button:hover {
+  background-color: var(--pinterest-color);
+}
+
+/*MEDIA SCREEN*/
+@media (max-width: 615px) {
+  .botones-navbar {
+    display: none;
+  }
+}
