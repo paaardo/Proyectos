@@ -88,10 +88,6 @@ body.dark nav ul li a {
   cursor: pointer;
 }
 
-main {
-  flex: 1;
-}
-
 #secciones {
   overflow-y: auto;
   height: calc(99vh - var(--header-height) - var(--footer-height));
@@ -102,9 +98,7 @@ main {
 .experiencia,
 .proyectos {
   padding: 2rem;
-  margin: 1rem;
   background-color: var(--background-light);
-  border-radius: 8px;
 }
 
 body.dark .sobremi,
