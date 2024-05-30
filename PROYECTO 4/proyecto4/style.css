@@ -1,0 +1,194 @@
+:root {
+  --background-light: #ffffff;
+  --heading-light: #000000;
+  --body-light: #333333;
+  --background-dark: #000000;
+  --heading-dark: #ffffff;
+  --body-dark: #cccccc;
+  --font-family: 'Open Sans', sans-serif;
+  --header-height: 80px;
+  --footer-height: 40px;
+  --header-footer-background-light: #f0f0f0;
+  --header-footer-background-dark: #1a1a1a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-light);
+  color: var(--body-light);
+  margin: 0;
+  padding: 0;
+}
+
+body.dark {
+  background-color: var(--background-dark);
+  color: var(--body-dark);
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding-top: calc(var(--header-height) + 5px);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--header-footer-background-light);
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  height: var(--header-height);
+}
+
+body.dark header {
+  background-color: var(--header-footer-background-dark);
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: var(--heading-light);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+body.dark nav ul li a {
+  color: var(--heading-dark);
+}
+
+#nombre {
+  margin: 0;
+}
+
+#cambiarTema {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+main {
+  flex: 1;
+}
+
+#secciones {
+  overflow-y: auto;
+  height: calc(99vh - var(--header-height) - var(--footer-height));
+}
+
+.sobremi,
+.educacion,
+.experiencia,
+.proyectos {
+  padding: 2rem;
+  margin: 1rem;
+  background-color: var(--background-light);
+  border-radius: 8px;
+}
+
+body.dark .sobremi,
+body.dark .educacion,
+body.dark .experiencia,
+body.dark .proyectos {
+  background-color: var(--background-dark);
+}
+
+.sobremi img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.sobremi p,
+.educacion p,
+.experiencia p,
+.proyectos p {
+  margin-bottom: 1rem;
+}
+
+.sobremi ul,
+.educacion ul,
+.experiencia ul,
+.proyectos ul {
+  list-style-type: none;
+}
+
+.sobremi li,
+.educacion li,
+.experiencia li,
+.proyectos li {
+  margin-bottom: 0.5rem;
+}
+
+.sobremi li,
+.proyectos li {
+  background-color: var(--body-light);
+  color: var(--background-light);
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+body.dark .sobremi li,
+body.dark .proyectos li {
+  background-color: var(--body-dark);
+  color: var(--background-dark);
+}
+
+.proyectos a {
+  background-color: var(--heading-light);
+  color: var(--background-light);
+  padding: 0.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+body.dark .proyectos a {
+  background-color: var(--heading-dark);
+  color: var(--background-dark);
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--header-footer-background-light);
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--footer-height);
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+body.dark footer {
+  background-color: var(--header-footer-background-dark);
+}
+
+#footer-text {
+  margin: 0;
+}
