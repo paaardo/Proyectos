@@ -5,6 +5,8 @@ const input = document.querySelector('#texto-busqueda')
 const contenedorResultados = document.querySelector('#resultado')
 const contenedorSugerencias = document.querySelector('#sugerencia')
 
+llamadaImagenes('pinterest')
+
 formulario.addEventListener('submit', async (event) => {
   event.preventDefault()
   const textoInput = input.value

@@ -1,31 +1,15 @@
 import { datosCV } from '/datos'
+import { crearHeader } from './header.js'
+import { crearFooter } from './footer.js'
 
 const generarCV = (datos) => {
   const app = document.getElementById('app')
-
-  const header = document.createElement('header')
-  header.innerHTML = `
-    <h1>${datos.nombre}</h1>
-    <nav>
-      <ul>
-        <li><a href="#sobremi">Sobre mi</a></li>
-        <li><a href="#educacion">Educación</a></li>
-        <li><a href="#experiencia">Experiencia</a></li>
-        <li><a href="#proyectos">Proyectos</a></li>
-        <li>
-          <button id="cambiarTema">
-            <span id="iconoLuna">🌙</span>
-            <span id="iconoSol" style="display:none;">☀️</span>
-          </button>
-        </li>
-      </ul>
-    </nav>
-  `
+  const header = crearHeader(datos)
   app.appendChild(header)
 
-  const botonTema = document.getElementById('cambiarTema')
-  const iconoLuna = document.getElementById('iconoLuna')
-  const iconoSol = document.getElementById('iconoSol')
+  const botonTema = header.querySelector('#cambiarTema')
+  const iconoLuna = header.querySelector('#iconoLuna')
+  const iconoSol = header.querySelector('#iconoSol')
 
   botonTema.addEventListener('click', () => {
     document.body.classList.toggle('dark')
@@ -37,6 +21,7 @@ const generarCV = (datos) => {
       iconoSol.style.display = 'none'
     }
   })
+
   const secciones = document.createElement('div')
   secciones.id = 'secciones'
 
@@ -127,8 +112,7 @@ const generarCV = (datos) => {
 
   app.appendChild(secciones)
 
-  const footer = document.createElement('footer')
-  footer.innerHTML = `<p>CV ${datos.nombre} 2024</p>`
+  const footer = crearFooter(datos)
   app.appendChild(footer)
 }
 
