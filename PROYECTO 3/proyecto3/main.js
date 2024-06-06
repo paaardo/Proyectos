@@ -4,6 +4,7 @@ const formulario = document.querySelector('#busqueda')
 const input = document.querySelector('#texto-busqueda')
 const contenedorResultados = document.querySelector('#resultado')
 const contenedorSugerencias = document.querySelector('#sugerencia')
+const botonLimpiar = document.querySelector('#limpiar')
 
 llamadaImagenes('pinterest')
 
@@ -14,6 +15,11 @@ formulario.addEventListener('submit', async (event) => {
     return
   }
   await llamadaImagenes(textoInput)
+})
+
+botonLimpiar.addEventListener('click', () => {
+  input.value = ''
+  llamadaImagenes('pinterest')
 })
 
 async function llamadaImagenes(textoInput) {
@@ -45,7 +51,7 @@ function mostrarResultados(fotos, textoInput) {
 }
 
 function mostrarSugerencias(textoInput) {
-  const sugerencias = posiblesSugerencias(textoInput)
+  const sugerencias = posiblesSugerencias()
   sugerencias.forEach((sugerencia) => {
     const button = document.createElement('button')
     button.textContent = sugerencia
@@ -57,10 +63,6 @@ function mostrarSugerencias(textoInput) {
   })
 }
 
-function posiblesSugerencias(textoInput) {
-  return [
-    textoInput + ' tecnologia',
-    textoInput + ' arte',
-    textoInput + ' fotografia'
-  ]
+function posiblesSugerencias() {
+  return ['tecnologia', 'arte', 'fotografia']
 }

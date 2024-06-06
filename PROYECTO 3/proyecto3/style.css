@@ -78,8 +78,10 @@ li {
   outline: none;
 }
 
-#buscar {
+#buscar,
+#limpiar {
   padding: 10px 20px;
+  margin: 2px;
   background-color: var(--pinterest-color);
   color: white;
   border: none;
@@ -89,7 +91,8 @@ li {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#buscar:hover {
+#buscar:hover,
+#limpiar:hover {
   background-color: #a81d1d;
 }
 
@@ -102,9 +105,20 @@ h1 {
   font-size: 17px;
 }
 
+#resultado {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--spacing-photos);
+  justify-items: center;
+  padding: 20px;
+}
+
 #resultado img {
-  width: 200px;
-  margin: var(--spacing-photos);
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #sugerencia button {
