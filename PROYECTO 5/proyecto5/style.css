@@ -1,24 +1,39 @@
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background-color: #f0f0f0;
+:root {
+  --font-family: Arial, sans-serif;
+  --primary-color: #1abdd3;
+  --background-color: #e2e2e2;
+  --text-color: #242323;
+  --button-padding: 10px 25px;
+  --button-margin: 20px;
+  --button-border-radius: 5px;
+  --grid-gap: 15px;
+  --bingo-bola-size: 30px;
+  --bingo-bola-selected-background-color: red;
+  --bingo-bola-selected-color: white;
 }
 
+body {
+  font-family: var(--font-family);
+  text-align: center;
+  background-color: var(--background-color);
+}
+
+/*CSS MENU*/
 h1 {
-  color: #333;
+  color: var(--text-color);
 }
 
 .menu {
-  margin-top: 50px;
+  margin-top: var(--button-margin);
 }
 
 .menu button {
-  margin: 20px;
-  padding: 10px 20px;
-  background-color: #007bff;
+  margin: var(--button-margin);
+  padding: var(--button-padding);
+  background-color: var(--primary-color);
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: var(--button-border-radius);
   cursor: pointer;
 }
 
@@ -26,6 +41,115 @@ h1 {
   background-color: #0056b3;
 }
 
-#gameContainer {
-  margin-top: 30px;
+#juegoContenedor {
+  margin-top: var(--button-margin);
+}
+
+/*CSS BINGO*/
+#numero-actual {
+  font-size: 4em;
+  margin: var(--button-margin) 0;
+}
+
+.bingo-carton {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(calc(10% - var(--grid-gap)), 1fr)
+  );
+  gap: var(--grid-gap);
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  margin-top: var(--button-margin);
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bingo-bola {
+  width: var(--bingo-bola-size);
+  height: var(--bingo-bola-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid #d1cece;
+}
+
+.bingo-bola.seleccionado {
+  background-color: var(--bingo-bola-selected-background-color);
+  color: var(--bingo-bola-selected-color);
+}
+
+#control-botones {
+  margin-top: var(--button-margin);
+}
+
+#control-botones button {
+  margin: var(--button-margin);
+  padding: var(--button-padding);
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--button-border-radius);
+  cursor: pointer;
+}
+
+#control-botones button:hover {
+  background-color: #0056b3;
+}
+
+#mensaje-final {
+  margin-top: 200px;
+}
+
+/*MEDIA SCREEN BINGO*/
+@media screen and (max-width: 400px) {
+  .bingo-carton {
+    grid-template-columns: repeat(4, minmax(calc(25% - var(--grid-gap)), 1fr));
+  }
+}
+
+/*CSS MEMORIA*/
+.carta {
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  border: 4px solid #000000;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  background-color: gray;
+  display: inline-block;
+}
+
+.carta.girada {
+  transform: rotateY(180deg);
+  cursor: auto;
+}
+
+.carta.match {
+  border-color: transparent;
+  cursor: auto;
+}
+
+#reiniciarBoton {
+  margin: var(--button-margin);
+  padding: var(--button-padding);
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--button-border-radius);
+  cursor: pointer;
+}
+
+#reiniciarBoton:hover {
+  background-color: #0056b3;
+}
+
+#mensaje-felicidades {
+  font-weight: bold;
+  font-size: 2em;
 }
