@@ -2,6 +2,7 @@
   --font-family: Arial, sans-serif;
   --primary-color: #1abdd3;
   --background-color: #e2e2e2;
+  --background-boton-hover: #0056b3;
   --text-color: #242323;
   --button-padding: 10px 25px;
   --button-margin: 20px;
@@ -38,7 +39,7 @@ h1 {
 }
 
 .menu button:hover {
-  background-color: #0056b3;
+  background-color: var(--background-boton-hover);
 }
 
 #juegoContenedor {
@@ -98,7 +99,7 @@ h1 {
 }
 
 #control-botones button:hover {
-  background-color: #0056b3;
+  background-color: var(--background-boton-hover);
 }
 
 #mensaje-final {
@@ -152,4 +153,52 @@ h1 {
 #mensaje-felicidades {
   font-weight: bold;
   font-size: 2em;
+}
+
+/*CSS MOLE*/
+#tablero {
+  display: inline-block;
+}
+
+.agujero {
+  display: inline-block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: #b18e59;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+.mole {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-image: url('mole.png');
+  background-size: cover;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: none;
+}
+
+#puntos,
+#contador,
+#iniciarBoton {
+  margin-top: 20px;
+  font-size: 1em;
+}
+
+#iniciarBoton {
+  margin: var(--button-margin);
+  padding: var(--button-padding);
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--button-border-radius);
+  cursor: pointer;
+}
+
+#iniciarBoton:hover {
+  background-color: #0056b3;
 }
